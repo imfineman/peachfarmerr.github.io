@@ -126,13 +126,13 @@ button, input, select, textarea { font: inherit; }
   border-radius: 8px;
   background: #f3eee7;
   border: 1px solid var(--line);
-  min-height: 260px;
+  min-height: 220px;
   padding: 8px;
 }
 
 .photo-grid img {
   width: 100%;
-  max-height: 320px;
+  max-height: 280px;
   display: block;
   object-fit: contain;
 }
@@ -242,6 +242,28 @@ button, input, select, textarea { font: inherit; }
 .footer a {
   display: block;
   margin-top: 8px;
+}
+
+.account-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  line-height: 1.7;
+}
+
+.copy-account {
+  border: 1px solid #ffffff80;
+  border-radius: 8px;
+  padding: 7px 10px;
+  background: #ffffff14;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.copy-account:hover {
+  background: #ffffff24;
 }
 
 .sticky-order,

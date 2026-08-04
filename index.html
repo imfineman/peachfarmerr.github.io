@@ -98,6 +98,15 @@
         <figure>
           <img src="./assets/photos/gift-box.jpeg" alt="선물 상자에 담긴 복숭아">
         </figure>
+        <figure>
+          <img src="./assets/photos/review-1.jpeg" alt="접시에 담긴 복숭아와 자른 황도">
+        </figure>
+        <figure>
+          <img src="./assets/photos/review-2.jpeg" alt="상자에 포장된 황도 복숭아">
+        </figure>
+        <figure>
+          <img src="./assets/photos/review-3.jpeg" alt="상자 앞에서 확인하는 복숭아">
+        </figure>
       </div>
     </section>
 
@@ -141,6 +150,10 @@
     <div>
       <h2>대윤 농장</h2>
       <p>농장주 김창섭</p>
+      <div class="account-line">
+        <span>계좌번호 농협 507068-52-044941</span>
+        <button type="button" class="copy-account" onclick="copyAccount(this)">복사하기</button>
+      </div>
     </div>
     <div>
       주문 문의
@@ -154,6 +167,25 @@
   <script>
     function toggleMenu(){
       document.querySelector('.nav')?.classList.toggle('open');
+    }
+
+    async function copyAccount(button){
+      const account = '농협 507068-52-044941';
+      try {
+        await navigator.clipboard.writeText(account);
+      } catch (error) {
+        const input = document.createElement('input');
+        input.value = account;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        input.remove();
+      }
+      const original = button.textContent;
+      button.textContent = '복사됨';
+      setTimeout(() => {
+        button.textContent = original;
+      }, 1400);
     }
   </script>
 </body>
